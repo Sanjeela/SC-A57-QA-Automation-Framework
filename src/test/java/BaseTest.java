@@ -14,6 +14,8 @@ public class BaseTest {
 
     public WebDriver driver;
 
+    String url = "https://qa.koel.app//";
+
     @BeforeSuite
     static void setupClass() {
         WebDriverManager.chromedriver().setup();
