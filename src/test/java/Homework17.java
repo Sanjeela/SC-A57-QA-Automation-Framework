@@ -10,10 +10,10 @@ public class Homework17 extends BaseTest{
 
         String songAddedNotification = "Added 1 song into \"Sanjeelas Playlist1.\"";
 
-        navigateToLoginPage();
+        navigateToPage();
         provideEmail("sanjeela.chitrakar@testpro.io");
         providePassword("te$t$tudent1");
-        clickSubmit();
+        clickLoginBtn();
 
         Thread.sleep(2000);
 

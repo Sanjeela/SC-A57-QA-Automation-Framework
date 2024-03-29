@@ -7,10 +7,10 @@ public class Homework18 extends BaseTest {
 
     @Test
     public void playSong() throws InterruptedException{
-        navigateToLoginPage();
+        navigateToPage();
         provideEmail("sanjeela.chitrakar@testpro.io");
         providePassword("te$t$tudent1");
-        clickSubmit();
+        clickLoginBtn();
 
         Thread.sleep(2000);
 
