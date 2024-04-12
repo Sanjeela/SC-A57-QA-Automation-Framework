@@ -19,6 +19,7 @@ public class HomePage extends BasePage {
 
 
     public HomePage clickPlaylist(){
+        wait.until(ExpectedConditions.visibilityOf(playlist));
         playlist.click();
         return this;
 

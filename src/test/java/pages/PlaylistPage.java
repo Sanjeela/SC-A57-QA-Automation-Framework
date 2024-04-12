@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class PlaylistPage extends BasePage{
 
@@ -20,12 +21,15 @@ public class PlaylistPage extends BasePage{
     WebElement notification;
 
     public PlaylistPage clickDeleteThisPlaylist(){
+        wait.until(ExpectedConditions.visibilityOf(deleteThisPlaylist));
         deleteThisPlaylist.click();
+        wait.until(ExpectedConditions.visibilityOf(clickOk));
         clickOk.click();
         return this;
     }
 
     public String getDeletePlaylistNotification(){
+        wait.until(ExpectedConditions.visibilityOf(notification));
         return notification.getText();
     }
 }
