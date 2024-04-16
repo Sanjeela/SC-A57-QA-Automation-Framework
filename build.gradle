@@ -12,6 +12,7 @@ repositories {
 dependencies {
     testImplementation 'org.testng:testng:7.6.1'
     implementation 'org.seleniumhq.selenium:selenium-java:4.5.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-http-jdk-client:4.5.0'
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.7.0'
 }
 
