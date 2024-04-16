@@ -11,16 +11,16 @@ public class Homework23 extends BaseTest{
 
         String playlistDeletedNotification = "Deleted playlist \"Sanjeelas Playlist1.\"";
 
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
 
         loginPage.provideEmail("sanjeela.chitrakar@testpro.io")
                 .providePassword("te$t$tudent1")
                 .clickSubmitBtn();
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.clickPlaylist();
 
-        PlaylistPage playlistPage = new PlaylistPage(driver);
+        PlaylistPage playlistPage = new PlaylistPage(getDriver());
         playlistPage.clickDeleteThisPlaylist();
 
         Assert.assertEquals(playlistPage.getDeletePlaylistNotification(), playlistDeletedNotification);
