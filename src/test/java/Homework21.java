@@ -7,11 +7,11 @@ import org.testng.annotations.Test;
 
 public class Homework21 extends BaseTest{
 
-    String newPlaylistName = "Sanjeela Edited Playlist";
+    String newPlaylistName = "Sanjeela Edited Playlist 21";
 
     @Test
     public void renamePlaylist()throws InterruptedException{
-       String updatedPlaylistMsg ="Updated playlist \"Sanjeela Edited Playlist.\"";
+       String updatedPlaylistMsg ="Updated playlist \"Sanjeela Edited Playlist 21.\"";
 
         provideEmail("sanjeela.chitrakar@testpro.io");
         providePassword("te$t$tudent1");
@@ -29,7 +29,7 @@ public class Homework21 extends BaseTest{
     }
 
     public void doubleClickPlaylist(){
-        WebElement clickPlaylist = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li.playlist:nth-child(3)")));
+        WebElement clickPlaylist = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//section[@id='playlists']//a[contains(text(),'Sanjeela Rename 21')]")));
         actions.doubleClick(clickPlaylist).perform();
     }
 
