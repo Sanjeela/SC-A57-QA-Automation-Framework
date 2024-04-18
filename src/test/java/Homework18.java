@@ -25,17 +25,17 @@ public class Homework18 extends BaseTest {
     }
 
     public void clickPlay(){
-        WebElement playNextSong = driver.findElement(By.xpath("//i[@data-testid='play-next-btn']"));
+        WebElement playNextSong = getDriver().findElement(By.xpath("//i[@data-testid='play-next-btn']"));
         playNextSong.click();
     }
 
     public void clickPlayBtn(){
-        WebElement play = driver.findElement(By.xpath("//span[@title='Play or resume']"));
+        WebElement play = getDriver().findElement(By.xpath("//span[@title='Play or resume']"));
         play.click();
 
     }
     public void pauseBthDisplayed(){
-        WebElement pauseBtn = driver.findElement(By.xpath("//span[@data-testid='pause-btn']"));
+        WebElement pauseBtn = getDriver().findElement(By.xpath("//span[@data-testid='pause-btn']"));
         Assert.assertTrue(pauseBtn.isDisplayed());
     }
 

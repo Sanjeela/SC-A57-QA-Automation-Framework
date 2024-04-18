@@ -35,7 +35,6 @@ public class HomePage extends BasePage {
     public void doubleClickPlaylist(){
         WebElement clickPlaylist = findElement(doubleClickPlaylistLocator);
         actions.doubleClick(clickPlaylist).perform();
-
     }
 
     public void enterNewPlaylistName(String newPlaylistName){
