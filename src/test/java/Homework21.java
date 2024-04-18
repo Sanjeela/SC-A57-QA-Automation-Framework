@@ -10,21 +10,18 @@ public class Homework21 extends BaseTest{
     String newPlaylistName = "Sanjeela Edited Playlist 21";
 
     @Test
-    public void renamePlaylist()throws InterruptedException{
+    public void renamePlaylist() {
        String updatedPlaylistMsg ="Updated playlist \"Sanjeela Edited Playlist 21.\"";
 
         provideEmail("sanjeela.chitrakar@testpro.io");
         providePassword("te$t$tudent1");
         clickSubmit();
-        Thread.sleep(2000); // I used this Thread.sleep because the test moves so quickly that my test didn't pass so i have to use it.
 
         doubleClickPlaylist();
 
         enterNewPlaylistName();
 
         Assert.assertEquals(getRenamePlaylistSuccessMsg(),updatedPlaylistMsg);
-
-
 
     }
 

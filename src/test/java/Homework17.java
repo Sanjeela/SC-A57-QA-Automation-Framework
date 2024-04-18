@@ -41,33 +41,33 @@ public class Homework17 extends BaseTest{
 
     }
     public void searchSongName(String songName){
-        WebElement search = driver.findElement(By.cssSelector("input[type='search']"));
+        WebElement search = getDriver().findElement(By.cssSelector("input[type='search']"));
         search.clear();
         search.sendKeys(songName);
     }
 
     public void clickViewAllBtn(){
-        WebElement viewAll = driver.findElement(By.cssSelector("button[data-test='view-all-songs-btn']"));
+        WebElement viewAll = getDriver().findElement(By.cssSelector("button[data-test='view-all-songs-btn']"));
         viewAll.click();
     }
 
     public void clickFirstSong(){
-        WebElement song = driver.findElement(By.xpath("//div[@class='song-list-wrap main-scroll-wrap search-results']//table[@class='items']//tr[position()=1]"));
+        WebElement song = getDriver().findElement(By.xpath("//div[@class='song-list-wrap main-scroll-wrap search-results']//table[@class='items']//tr[position()=1]"));
         song.click();
     }
 
     public void clickAddToBtn(){
-        WebElement AddTo = driver.findElement(By.cssSelector("button[class='btn-add-to']"));
+        WebElement AddTo = getDriver().findElement(By.cssSelector("button[class='btn-add-to']"));
         AddTo.click();
     }
 
     public void choosePlaylist(){
-        WebElement playlist = driver.findElement(By.xpath("//section[@id='songResultsWrapper']//li[contains(text(),'Sanjeelas Playlist1')]"));
+        WebElement playlist = getDriver().findElement(By.xpath("//section[@id='songResultsWrapper']//li[contains(text(),'Sanjeelas Playlist1')]"));
         playlist.click();
     }
 
     public String getAddToPlaylistNotification(){
-        WebElement notification = driver.findElement(By.cssSelector("div.success.show"));
+        WebElement notification = getDriver().findElement(By.cssSelector("div.success.show"));
         return notification.getText();
     }
 

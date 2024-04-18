@@ -29,23 +29,23 @@ public class Homework19 extends BaseTest{
     }
 
     public void clickPlaylist(){
-        WebElement playlist = driver.findElement(By.xpath("//section[@id='playlists']//a[contains(text(),'Sanjeelas Playlist1')]"));
+        WebElement playlist = getDriver().findElement(By.xpath("//section[@id='playlists']//a[contains(text(),'Sanjeelas Playlist1')]"));
         playlist.click();
 
     }
 
     public void clickDeleteThisPlaylist() throws InterruptedException{
-        WebElement deleteThisPlaylist = driver.findElement(By.cssSelector("button[class='del btn-delete-playlist']"));
+        WebElement deleteThisPlaylist = getDriver().findElement(By.cssSelector("button[class='del btn-delete-playlist']"));
         deleteThisPlaylist.click();
 
         Thread.sleep(2000);
 
-        WebElement clickOk = driver.findElement(By.cssSelector("button[class='ok']"));
+        WebElement clickOk = getDriver().findElement(By.cssSelector("button[class='ok']"));
         clickOk.click();
     }
 
     public String getDeletePlaylistNotification(){
-        WebElement notification = driver.findElement(By.cssSelector("div.success.show"));
+        WebElement notification = getDriver().findElement(By.cssSelector("div.success.show"));
         return notification.getText();
     }
 }

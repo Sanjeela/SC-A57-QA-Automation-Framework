@@ -9,11 +9,11 @@ public class Homework22 extends BaseTest{
     public void renamePlaylist(){
         String updatedPlaylistMsg ="Updated playlist \"Sanjeela Edited Playlist 22.\"";
 
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(getDriver());
 
         loginPage.login("sanjeela.chitrakar@testpro.io" , "te$t$tudent1");
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
 
         homePage.doubleClickPlaylist();
         homePage.enterNewPlaylistName("Sanjeela Edited Playlist 22");
