@@ -16,8 +16,6 @@ public class HomePage extends BasePage {
     @FindBy(xpath="//section[@id='playlists']//a[contains(text(),'Sanjeelas Playlist1')]")
     WebElement playlist;
 
-
-
     public HomePage clickPlaylist(){
         wait.until(ExpectedConditions.visibilityOf(playlist));
         playlist.click();
@@ -30,7 +28,7 @@ public class HomePage extends BasePage {
 
 
    //***************************************************************************************************
-    private By doubleClickPlaylistLocator = By.cssSelector("li.playlist:nth-child(3)");
+    private By doubleClickPlaylistLocator = By.xpath("//section[@id='playlists']//a[contains(text(),'Sanjeela Rename 22')]");
     private By enterNewPlaylistNameLocator = By.cssSelector("[name='name']");
     private By getRenamePlaylistSuccessMsgLocator = By.cssSelector("div.success.show");
 

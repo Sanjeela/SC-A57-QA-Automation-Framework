@@ -7,7 +7,7 @@ public class Homework22 extends BaseTest{
 
     @Test
     public void renamePlaylist(){
-        String updatedPlaylistMsg ="Updated playlist \"Sanjeela Edited Playlist.\"";
+        String updatedPlaylistMsg ="Updated playlist \"Sanjeela Edited Playlist 22.\"";
 
         LoginPage loginPage = new LoginPage(driver);
 
@@ -16,7 +16,7 @@ public class Homework22 extends BaseTest{
         HomePage homePage = new HomePage(driver);
 
         homePage.doubleClickPlaylist();
-        homePage.enterNewPlaylistName("Sanjeela Edited Playlist");
+        homePage.enterNewPlaylistName("Sanjeela Edited Playlist 22");
 
         String notification = homePage.getRenamePlaylistSuccessMsg();
         Assert.assertEquals(notification, updatedPlaylistMsg);

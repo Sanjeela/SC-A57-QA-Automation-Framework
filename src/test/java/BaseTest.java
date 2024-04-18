@@ -47,6 +47,8 @@ public class BaseTest {
         threadDriver.set(pickBrowser(System.getProperty("browser")));
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         getDriver().manage().window().maximize();
+        wait= new WebDriverWait(getDriver(),Duration.ofSeconds(10));
+        actions=new Actions(getDriver());
         navigateToLoginPage(BaseURL);
     }
 
