@@ -32,6 +32,8 @@ public class HomePage extends BasePage {
     private By enterNewPlaylistNameLocator = By.cssSelector("[name='name']");
     private By getRenamePlaylistSuccessMsgLocator = By.cssSelector("div.success.show");
 
+    private By getAvatar = By.cssSelector("img.avatar");
+
     public void doubleClickPlaylist(){
         WebElement clickPlaylist = findElement(doubleClickPlaylistLocator);
         actions.doubleClick(clickPlaylist).perform();
@@ -47,6 +49,11 @@ public class HomePage extends BasePage {
     public String getRenamePlaylistSuccessMsg(){
         WebElement notification = findElement(getRenamePlaylistSuccessMsgLocator);
         return notification.getText();
+    }
+
+    public boolean isUserAvatarDisplayed() {
+        WebElement avatarIcon = findElement(getAvatar);
+        return avatarIcon.isDisplayed();
     }
 
 
