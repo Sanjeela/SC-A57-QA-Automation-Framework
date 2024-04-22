@@ -1,13 +1,13 @@
-import pages.HomePage;
-import pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.HomePage;
+import pages.LoginPage;
 import pages.PlaylistPage;
 
-public class Homework23 extends BaseTest{
+public class PlaylistTest extends BaseTest{
 
     @Test
-    public void deletePlaylist() throws InterruptedException {
+    public void deletePlaylist() {
 
         String playlistDeletedNotification = "Deleted playlist \"Sanjeelas Playlist1.\"";
 
@@ -25,5 +25,24 @@ public class Homework23 extends BaseTest{
 
         Assert.assertEquals(playlistPage.getDeletePlaylistNotification(), playlistDeletedNotification);
     }
+
+    @Test
+    public void renamePlaylist(){
+        String updatedPlaylistMsg ="Updated playlist \"Sanjeela Edited Playlist 22.\"";
+
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.login("sanjeela.chitrakar@testpro.io" , "te$t$tudent1");
+
+        HomePage homePage = new HomePage(getDriver());
+        homePage.doubleClickPlaylist();
+        homePage.enterNewPlaylistName("Sanjeela Edited Playlist 22");
+        String notification = homePage.getRenamePlaylistSuccessMsg();
+
+        Assert.assertEquals(notification, updatedPlaylistMsg);
+
+    }
+
 }
+
+
 
