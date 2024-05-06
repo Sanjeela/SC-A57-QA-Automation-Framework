@@ -42,6 +42,27 @@ public class PlaylistTest extends BaseTest{
 
     }
 
+    @Test
+    public void createSmartPlaylistWithOneRule() throws InterruptedException {
+        String playlistNotification = "Created playlist \"TestPro.\"";
+
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.login("sanjeela.chitrakar@testpro.io" , "te$t$tudent1");
+        Thread.sleep(5000);
+        HomePage homePage = new HomePage(getDriver());
+        homePage.clickPlusSignBtn()
+                .clickNewSmartPlaylist()
+                .provideSmartPlaylistName("TestPro")
+                .provideRuleCriteria()
+                .provideRuleCriteriaName("Airbit")
+                .clickSaveBtn();
+
+        Assert.assertEquals(homePage.getCreatePlaylistNotification(), playlistNotification);
+
+
+
+    }
+
 }
 
 
