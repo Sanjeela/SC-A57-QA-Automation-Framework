@@ -8,13 +8,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class HomePage extends BasePage {
 
     public HomePage(WebDriver givenDriver) {
         super(givenDriver);
     }
 
-    @FindBy(xpath="//section[@id='playlists']//a[contains(text(),'Sanjeelas Playlist1')]")
+    @FindBy(xpath = "//section[@id='playlists']//a[contains(text(),'Sanjeelas Playlist1')]")
     WebElement playlist;
 
     @FindBy(xpath = "//i[@data-testid='play-next-btn']")
@@ -47,72 +49,141 @@ public class HomePage extends BasePage {
     @FindBy(css = "div[class='side player-controls']")
     WebElement playControlBar;
 
-    public HomePage searchSongName(String songName){
-       wait.until(ExpectedConditions.visibilityOf(search));
+    @FindBy(css = "i[data-testid='sidebar-create-playlist-btn']")
+    WebElement plusSign;
+
+    @FindBy(css="li[data-testid='playlist-context-menu-create-smart']")
+    WebElement smartPlaylist;
+
+    @FindBy(css = "input[name='name']")
+    WebElement playlistDialogBox;
+
+    @FindBy(xpath = "//select[@name='model[]']//option[contains(text(),'Album')]")
+    WebElement ruleCriteria1;
+
+    @FindBy(css = "input[name='value[]']")
+    WebElement ruleCriteria2;
+
+    @FindBy(xpath = "//div[@class='modal-wrapper overlay']//button[@type='submit']")
+    WebElement save;
+
+    public HomePage searchSongName(String songName) {
+        wait.until(ExpectedConditions.visibilityOf(search));
         search.clear();
         search.sendKeys(songName);
         return this;
     }
 
-    public HomePage clickViewAllBtn(){
-       wait.until(ExpectedConditions.visibilityOf(viewAll));
-       viewAll.click();
-       return this;
+    public HomePage clickViewAllBtn() {
+        wait.until(ExpectedConditions.visibilityOf(viewAll));
+        viewAll.click();
+        return this;
     }
 
-    public HomePage clickFirstSong(){
+    public HomePage clickFirstSong() {
         wait.until(ExpectedConditions.visibilityOf(song));
         song.click();
         return this;
     }
 
-    public HomePage clickAddToBtn(){
+    public HomePage clickAddToBtn() {
         wait.until(ExpectedConditions.visibilityOf(AddTo));
         AddTo.click();
         return this;
     }
 
-    public HomePage choosePlaylist(){
+    public HomePage choosePlaylist() {
         wait.until(ExpectedConditions.visibilityOf(playlistChoose));
         playlistChoose.click();
         return this;
     }
 
-    public String getAddToPlaylistNotification(){
+    public String getAddToPlaylistNotification() {
         wait.until(ExpectedConditions.visibilityOf(notification));
         return notification.getText();
     }
 
-    public HomePage clickPlaylist(){
+    public HomePage clickPlaylist() {
         wait.until(ExpectedConditions.visibilityOf(playlist));
         playlist.click();
         return this;
 
     }
-    public HomePage clickPlayNextBtn(){
+
+    public HomePage clickPlayNextBtn() {
         wait.until(ExpectedConditions.visibilityOf(playNextSong));
         playNextSong.click();
         return this;
     }
 
-    public HomePage clickPlayBtn(){
-       wait.until(ExpectedConditions.visibilityOf(play));
+    public HomePage clickPlayBtn() {
+        wait.until(ExpectedConditions.visibilityOf(play));
         play.click();
-       return this;
+        return this;
 
     }
-    public boolean pauseBthDisplayed(){
+
+    public boolean pauseBthDisplayed() {
         wait.until(ExpectedConditions.visibilityOf(pauseBtn));
         return (pauseBtn.isDisplayed());
     }
 
-    public HomePage hoverToPlayBtn(){
+    public HomePage hoverToPlayBtn() {
         wait.until(ExpectedConditions.visibilityOf(playControlBar));
         actions.moveToElement(playControlBar).perform();
         return this;
-
-
     }
+
+    public HomePage clickPlusSignBtn() {
+        wait.until(ExpectedConditions.elementToBeClickable(plusSign));
+        plusSign.click();
+        return this;
+    }
+
+    public HomePage clickNewSmartPlaylist(){
+        wait.until(ExpectedConditions.visibilityOf(smartPlaylist));
+        smartPlaylist.click();
+        return this;
+    }
+
+    public HomePage provideSmartPlaylistName(String playlistname){
+        wait.until(ExpectedConditions.visibilityOf(playlistDialogBox));
+        playlistDialogBox.clear();
+        playlistDialogBox.sendKeys(playlistname);
+        return this;
+    }
+
+    public HomePage provideRuleCriteria(){
+        wait.until(ExpectedConditions.visibilityOf(ruleCriteria1));
+        ruleCriteria1.click();
+        return this;
+    }
+
+    public HomePage provideRuleCriteriaName(String songName){
+        wait.until(ExpectedConditions.visibilityOf(ruleCriteria2));
+        ruleCriteria2.clear();
+        ruleCriteria2.sendKeys(songName);
+        return this;
+    }
+
+    public HomePage clickSaveBtn(){
+        wait.until(ExpectedConditions.visibilityOf(save));
+        save.click();
+        return this;
+    }
+
+    public String getCreatePlaylistNotification(){
+        wait.until(ExpectedConditions.visibilityOf(notification));
+        return notification.getText();
+    }
+
+
+
+
+
+
+
+
 
 
 
